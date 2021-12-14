@@ -21,11 +21,13 @@ private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     }
 
     private void recyclerViewPopular() {
+        //리사이클러뷰를 가로로 배치
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerViewPopularList=findViewById(R.id.recyclerView2);
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
-        ArrayList<EngineDomain> enginelist = new ArrayList<>();
+        //arraylist에 데이터추가가
+       ArrayList<EngineDomain> enginelist = new ArrayList<>();
         enginelist.add(new EngineDomain("Unity", "unitybox","developer: Unity Technologies, language:c#, major work:(ori,pokemon go...), last ver:2021.1.14", 2160.0));
         enginelist.add(new EngineDomain("unreal", "unrealbox","developer: Epic Games , language:(c++,unrealscript,python..), major work:(Lineage,outlast...), last ver:5.0.0", 1500.0));
         enginelist.add(new EngineDomain("rpgVX", "rpgmakerbox","developer: KADOKAWA, language:ruby, pitted kalmata, major work:(Lisa,paranomal syndrome...), last ver:MZ", 82.0));

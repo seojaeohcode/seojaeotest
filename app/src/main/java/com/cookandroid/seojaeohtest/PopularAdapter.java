@@ -26,6 +26,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.Viewhold
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //카테고리 뷰홀더를 뷰객체로 변환
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_popular,parent,false);
         return new Viewholder(inflate);
     }
@@ -42,7 +43,9 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.Viewhold
         holder.addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //디테일 액티비티로 시작
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                //오브젝트를 넘겨줌
                 intent.putExtra("object", engineDomains.get(position));
                 holder.itemView.getContext().startActivity(intent);
             }

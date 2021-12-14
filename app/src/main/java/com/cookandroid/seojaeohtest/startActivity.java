@@ -19,7 +19,7 @@ private ConstraintLayout startbtn;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(startActivity.this, MainActivity.class));
-
+                //메인으로의 화면전환
             }
         });
     }

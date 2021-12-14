@@ -26,6 +26,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //카테고리 뷰홀더를 뷰객체로 변환
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_cat,parent,false);
         return new Viewholder(inflate);
     }
@@ -34,6 +35,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         holder.categoryName.setText(categoryDomains.get(position).getTitle());
         String picUrl = "";
+        //position값에 따라 배경과 아이콘변경
         switch (position)
         {
             case 0:{
@@ -62,9 +64,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
                 break;
             }
         }
-
+        //getIdentifier - 리소스 이름으로 바로 리소스ID itemview=리사이클러뷰의 아이템
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
 
+        //글라이드를 통해 뷰에 이미지로드
         Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.categoryPic);
     }
 
